@@ -15,7 +15,7 @@
  *
  *
  */
-def getDriverVersion() {[platform: "Universal", major: 2, minor: 0, build: 0]}
+def getDriverVersion() {[platform: "Universal", major: 2, minor: 0, build: 1]}
 
 metadata
 {
@@ -169,10 +169,16 @@ def setSaturation(value)
 
 	Sets the Color Temperature based on <value>.
 */
-def setColorTemperature(value)
+def setColorTemperature(ct) 
 {
 	// The server will update status
-	parent.sendDeviceEvent(device.deviceNetworkId, "setColorTemperature", [value])
+	parent.sendDeviceEvent(device.deviceNetworkId, "setColorTemperature", [ct])
+}
+
+def setColorTemperature(ct, level, duration) 
+{
+	// The server will update status
+	parent.sendDeviceEvent(device.deviceNetworkId, "setColorTemperature", [ct, level, duration])
 }
 
 
