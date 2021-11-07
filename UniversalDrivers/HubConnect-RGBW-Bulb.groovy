@@ -176,7 +176,7 @@ def setColorTemperature(ct)
 	parent.sendDeviceEvent(device.deviceNetworkId, "setColorTemperature", [ct])
 }
 
-def setColorTemperature(ct, level, duration) 
+def setColorTemperature(ct, level, duration=null) 
 {
 	// The server will update status
 	parent.sendDeviceEvent(device.deviceNetworkId, "setColorTemperature", [ct, level, duration])
